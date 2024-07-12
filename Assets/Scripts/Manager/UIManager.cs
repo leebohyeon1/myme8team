@@ -54,7 +54,7 @@ public class UIManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             OptionUISet();
-            Time.timeScale = 0f;
+           // Time.timeScale = 0f;
         }
     }
 

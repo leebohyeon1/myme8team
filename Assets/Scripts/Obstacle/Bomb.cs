@@ -6,11 +6,8 @@ public class Bomb : MonoBehaviour
 {
     public GameObject explosion;
 
-    // Start is called before the first frame update
     void Start()
     {
-        //transform.DOScale(new Vector3(transform.localScale.x * 5, transform.localScale.y * 5,
-        //    transform.localScale.z * 5), 2f).SetEase(Ease.InQuad).OnComplete(()=> Attack());
     }
 
     void Attack()

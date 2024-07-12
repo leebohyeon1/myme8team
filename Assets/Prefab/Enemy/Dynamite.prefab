@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7693215678090821106}
   - component: {fileID: 6027210762724397937}
+  - component: {fileID: 4630081970301498971}
   m_Layer: 6
   m_Name: Dynamite
   m_TagString: Untagged
@@ -84,3 +85,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4630081970301498971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8547654919558404652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2dff25c7b48ee04b9e855c11f54d0e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosion: {fileID: 5002744101635410862, guid: e1c91cda8ffc2f14c90c781f5f62d628, type: 3}

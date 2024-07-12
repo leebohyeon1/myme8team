@@ -29,9 +29,9 @@ public class UIManager : MonoBehaviour
     {
        
 
-        if (titleUI == null) { titleUI = FindObjectOfType<TitleUI>(); }
-        if (optionUI == null) { optionUI = FindObjectOfType<OptionUI>(); }
-        if (gameUI == null) { gameUI = FindObjectOfType<GameUI>(); }
+        if (titleUI == null) { titleUI = FindFirstObjectByType<TitleUI>(); }
+        if (optionUI == null) { optionUI = FindFirstObjectByType<OptionUI>(); }
+        if (gameUI == null) { gameUI = FindFirstObjectByType<GameUI>(); }
 
         switch (SceneManager.GetActiveScene().buildIndex)
         {

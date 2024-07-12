@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using TMPro;
-using DG.Tweening;
 
 public class TitleUI : MonoBehaviour
 {
@@ -12,13 +10,13 @@ public class TitleUI : MonoBehaviour
 
     void Start()
     {
-        title.transform.DOPunchScale(new Vector3(0.5f,0.5f,0.5f),2f,2,0).SetEase(Ease.InCubic);
+      
     }
 
 
     void Update()
     {
-        
+
     }
     //==========================================================
 
@@ -39,5 +37,4 @@ public class TitleUI : MonoBehaviour
         UIManager.Instance.OptionUISet(true);
     }
     #endregion
-
 }

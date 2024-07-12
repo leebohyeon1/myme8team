@@ -1,5 +1,5 @@
 using System.Collections;
-using System.Collections.Generic; // 딕셔너리 클래스를 포함해서 추가적인 모노 클래스 접근 가능
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -48,7 +48,7 @@ public class EventManager : MonoBehaviour
     {
         List<IListener> ListenList = null;
 
-        if(Listeners.TryGetValue(Event_Type, out ListenList))
+        if (Listeners.TryGetValue(Event_Type, out ListenList))
         {
             ListenList.Add(Listener);
             return;
@@ -65,13 +65,13 @@ public class EventManager : MonoBehaviour
     {
         List<IListener> ListenList = null;
 
-        if(!Listeners.TryGetValue(Event_Type, out ListenList)) { return; }
+        if (!Listeners.TryGetValue(Event_Type, out ListenList)) { return; }
 
-        for(int i = 0; i< ListenList.Count; i++) 
+        for (int i = 0; i < ListenList.Count; i++)
         {
             if (!ListenList[i].Equals(null))
             {
-                ListenList[i].OnEvent(Event_Type, Sender,Param);
+                ListenList[i].OnEvent(Event_Type, Sender, Param);
             }
         }
     }
@@ -88,9 +88,9 @@ public class EventManager : MonoBehaviour
         Dictionary<EVENT_TYPE, List<IListener>> TmpListeners =
             new Dictionary<EVENT_TYPE, List<IListener>>();
 
-        foreach(KeyValuePair<EVENT_TYPE, List<IListener>> Item in Listeners)
+        foreach (KeyValuePair<EVENT_TYPE, List<IListener>> Item in Listeners)
         {
-            for(int i = Item.Value.Count - 1; i >= 0 ; i--)
+            for (int i = Item.Value.Count - 1; i >= 0; i--)
             {
                 if (Item.Value[i].Equals(null))
                 {
@@ -98,7 +98,7 @@ public class EventManager : MonoBehaviour
                 }
             }
 
-            if(Item.Value.Count == 0)
+            if (Item.Value.Count == 0)
             {
                 TmpListeners.Add(Item.Key, Item.Value);
             }

@@ -1,12 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.Burst.Intrinsics;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class UIManager : MonoBehaviour, IListener
-{ 
+public class UIManager : MonoBehaviour
+{
     public static UIManager Instance { get; private set; }
 
     public GameUI gameUI;
@@ -29,11 +27,11 @@ public class UIManager : MonoBehaviour, IListener
 
     void Start()
     {
-        EventManager.Instance.AddListener(EVENT_TYPE.SCENE_LOAD, this);
+       
 
         if (titleUI == null) { titleUI = FindObjectOfType<TitleUI>(); }
-        if(optionUI == null) { optionUI = FindObjectOfType<OptionUI>(); } 
-        if(gameUI == null) { gameUI = FindObjectOfType<GameUI>(); } 
+        if (optionUI == null) { optionUI = FindObjectOfType<OptionUI>(); }
+        if (gameUI == null) { gameUI = FindObjectOfType<GameUI>(); }
 
         switch (SceneManager.GetActiveScene().buildIndex)
         {
@@ -59,9 +57,7 @@ public class UIManager : MonoBehaviour, IListener
             Time.timeScale = 0f;
         }
     }
-    public void OnEvent(EVENT_TYPE Event_Type, Component Sender, object Param = null)
-    {
-    }  
+
     //==========================================================
 
     #region SetSceneUI
@@ -72,7 +68,7 @@ public class UIManager : MonoBehaviour, IListener
 
     public void OptionUISet(bool On = true)
     {
-        optionUI.gameObject.SetActive(On);        
+        optionUI.gameObject.SetActive(On);
     }
 
     public void GameUISet(bool On = true)

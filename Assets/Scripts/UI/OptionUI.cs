@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class OptionUI : MonoBehaviour
 {
@@ -33,7 +32,7 @@ public class OptionUI : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             SaveBtn();
         }
@@ -81,7 +80,7 @@ public class OptionUI : MonoBehaviour
     private void SetInitialResolution()
     {
         // 저장된 해상도 값이 있으면 그 값으로 설정하고, 없으면 현재 해상도로 설정
-       int savedResolutionIndex = PlayerPrefs.GetInt("resolution", -1);
+        int savedResolutionIndex = PlayerPrefs.GetInt("resolution", -1);
 
         if (savedResolutionIndex == -1)
         {
@@ -134,7 +133,7 @@ public class OptionUI : MonoBehaviour
                     break;
             }
         }
-       
+
     }
 
     private void ChangeFullScreenMode(ScreenMode mode)
@@ -168,14 +167,14 @@ public class OptionUI : MonoBehaviour
 
     public void ExitBtn()
     {
-       Application.Quit();
+        Application.Quit();
     }
     #endregion
     //==========================================================
 
     void SaveOption()
     {
-        PlayerPrefs.SetInt("resolution",resolutionIndex);
+        PlayerPrefs.SetInt("resolution", resolutionIndex);
         PlayerPrefs.SetInt("screenMode", screenModeIndex);
         PlayerPrefs.Save();
     }
@@ -189,7 +188,7 @@ public class OptionUI : MonoBehaviour
         resolutionDropdown.value = resolutionIndex;
 
         ChangeFullScreenMode((ScreenMode)screenModeIndex);
-        ScreenModeDropdown.value = screenModeIndex;   
+        ScreenModeDropdown.value = screenModeIndex;
     }
 }
 
